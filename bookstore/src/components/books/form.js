@@ -4,16 +4,15 @@ const Form = () => (
   <div className="form">
     <input
       type="text"
-      name="text"
+      name="title"
       placeholder="Book title"
     />
 
-    <select name="category" id="category">
-      <option value="">Category</option>
-      <option value="">Category 1</option>
-      <option value="">Category 2</option>
-    </select>
-
+    <input
+      type="text"
+      name="author"
+      placeholder="Author"
+    />
     <button type="submit" value="submit">Add book</button>
   </div>
 );
