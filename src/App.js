@@ -1,7 +1,7 @@
 /* eslint-disable jsx-quotes */
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Category, Books, NotFound } from './components/component';
+import { Category, Books } from './components/component';
 
 const App = () => (
   <div>
@@ -9,7 +9,6 @@ const App = () => (
       <Routes>
         <Route path='/books' index element={<Books />} />
         <Route path='/category' element={<Category />} />
-        <Route path='*' element={<NotFound />} />
       </Routes>
     </Router>
   </div>
