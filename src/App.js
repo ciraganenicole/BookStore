@@ -7,7 +7,7 @@ const App = () => (
   <div>
     <Router>
       <Routes>
-        <Route path='/books' index element={<Books />} />
+        <Route path='/' index element={<Books />} />
         <Route path='/category' element={<Category />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
