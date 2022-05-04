@@ -1,15 +1,14 @@
-const ADDCATEGORY = 'ADD_CATEGORY';
-const REMOVECATEGORY = 'REMOVE_CATEGORY';
-const CHECKSTATUS = 'CHECK_STATUS';
-const initialCategory = [];
+const ADD_CATEGORY = 'ADD_CATEGORY';
+const REMOVE_CATEGORY = 'REMOVE_CATEGORY';
+const CHECK_STATUS = 'CHECK_STATUS';
 
-export function reducer(categories = initialCategory, action) {
+export default function reducer(categories = [], action) {
   switch (action.type) {
-    case ADDCATEGORY:
+    case ADD_CATEGORY:
       return [...categories, action.book];
-    case REMOVECATEGORY:
+    case REMOVE_CATEGORY:
       return [...categories].filter((book) => book.id !== action.id);
-    case CHECKSTATUS:
+    case CHECK_STATUS:
       return 'Under Construction';
     default:
       return categories;
@@ -17,13 +16,13 @@ export function reducer(categories = initialCategory, action) {
 }
 
 export function addCategory(category) {
-  return { ADDCATEGORY, category };
+  return { ADD_CATEGORY, category };
 }
 
 export function removeCategory(id) {
-  return { type: REMOVECATEGORY, id };
+  return { type: REMOVE_CATEGORY, id };
 }
 
 export function checkStatus() {
-  return { type: CHECKSTATUS };
+  return { type: CHECK_STATUS };
 }

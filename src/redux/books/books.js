@@ -1,18 +1,25 @@
-const ADDING = 'ADDING';
-const REMOVING = 'REMOVING';
-const initialState = [];
+const ADD_BOOK = 'ADD_BOOK';
+const REMOVE_BOOK = 'REMOVE_BOOK';
+const FETCH_ALL_BOOK = 'FETCH_ALL_BOOK';
 
-export const bookReducer = (state = initialState, action) => {
+export const reducer = (book = [], action) => {
   switch (action.type) {
-    case ADDING:
-      return [...state, action.state];
-    case REMOVING:
-      return [...state].filter((book) => book.id !== action.id);
+    case ADD_BOOK:
+      return [...book, action.book];
+    case REMOVE_BOOK:
+      return [...book].filter((book) => book.id !== action.id);
     default:
-      return state;
+      return book;
   }
 };
 
-export const createBook = (state) => ({ type: ADDING, state });
+export default reducer;
 
-export const removeBook = (state) => ({ type: REMOVING, state });
+export const createBook = (book) => ({
+  type: ADD_BOOK,
+  book,
+});
+
+export const removeBook = (id) => ({ type: REMOVE_BOOK, id });
+
+export const getAllBooks = () => ({ type: FETCH_ALL_BOOK });
