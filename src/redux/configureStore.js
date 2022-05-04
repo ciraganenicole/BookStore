@@ -12,7 +12,7 @@ import categoryReducer from './categories/categories';
 const rootReducer = combineReducers({ bookReducer, categoryReducer });
 
 const store = createStore(
-  rootReducer,
+  rootReducer, { bookReducer: [], categoryReducer: [] },
   compose(
     applyMiddleware(thunk),
   ),

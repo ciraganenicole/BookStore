@@ -1,7 +1,7 @@
 /* eslint-disable jsx-quotes */
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeBook } from '../../redux/books/books';
+import { removeBook, getAllBooks } from '../../redux/books/books';
 
 const book = () => {
   const post = useSelector((state) => state.bookReducer);
@@ -10,17 +10,22 @@ const book = () => {
     e.preventDefault();
     dispatch(removeBook(id));
   };
+  useEffect(() => {
+    dispatch(getAllBooks());
+  }, []);
+
   return (
     <>
       {post.map((book) => (
         <div
-          key={book.id}
+          key={book.item_id}
           className='book-card'
         >
           <section>
             <div>
-              <p>{book.bookName}</p>
-              <p>{book.bookAuthor}</p>
+              <p>{book.title}</p>
+              <p>{book.author}</p>
+              <p>{book.category}</p>
             </div>
             <ul>
               <li>
@@ -29,8 +34,8 @@ const book = () => {
               <li>
                 <button
                   className='cursor-pointer'
-                  onClick={(e) => handleClick(book.id, e)}
-                  type='submit'
+                  onClick={(e) => handleClick(book.item_id, e)}
+                  type='button'
                 >
                   Remove
                 </button>
