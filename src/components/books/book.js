@@ -19,17 +19,23 @@ const book = () => {
       {post.map((book) => (
         <div
           key={book.item_id}
-          className='book-card'
+          className="row"
         >
-          <section>
+          <section className="grid-item">
             <div>
-              <p>{book.title}</p>
-              <p>{book.author}</p>
-              <p>{book.category}</p>
+              <p>
+                <span className="title">{book.title}</span>
+                <span className="by">By</span>
+                <span className="author">{book.author}</span>
+              </p>
+              <p className="categ">
+                Category:
+                <span className="category">{book.category}</span>
+              </p>
             </div>
-            <ul>
+            <ul className="list">
               <li>
-                Comment
+                <button type="button">Comment</button>
               </li>
               <li>
                 <button
@@ -40,23 +46,31 @@ const book = () => {
                   Remove
                 </button>
               </li>
-              <li>Edit</li>
+              <li>
+                <button type="button">Edit</button>
+              </li>
             </ul>
           </section>
-          <section>
-            <div className='circle' />
+          <section className="grid-item item1">
             <div>
-              <p>
-                {book.completed}
-                $
-              </p>
               <p>Completed</p>
             </div>
+            <div className="circle-wrap">
+              <div className="circle">
+                <div className="mask half">
+                  <div className="fill" />
+                </div>
+                <div className="inside-circle">
+                  {book.completed}
+
+                </div>
+              </div>
+            </div>
           </section>
-          <section>
+          <section className="grid-item">
             <div>
-              <p>CURRENT CHAPTER</p>
-              <p>Chapter 17</p>
+              <p className="current">CURRENT CHAPTER</p>
+              <p className="chap">Chapter 17</p>
             </div>
             <button type='submit'>
               Update progress
