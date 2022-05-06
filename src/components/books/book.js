@@ -46,20 +46,13 @@ const book = () => {
             </ul>
           </section>
           <section className="grid-item item1">
-            <div>
-              <p className="pourcent">65%</p>
-              <p className="complete">Completed</p>
-            </div>
-            <div className="circle-wrap">
-              <div className="circle">
-                <div className="mask half">
-                  <div className="fill" />
-                </div>
-                <div className="inside-circle">
-                  {book.completed}
-
-                </div>
-              </div>
+            <div className="oval-2" />
+            <div className="completed-txt-parcent">
+              <span className="completed-parcent">
+                {book.completed}
+                75%
+              </span>
+              <div className="completed-text">completed</div>
             </div>
           </section>
           <section className="grid-item">

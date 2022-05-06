@@ -1,47 +1,84 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,700,300);
 
-body {
-  padding: 0;
+::after,
+::before,
+* {
   margin: 0;
-  background-color: #ededed;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f6fa;
 }
 
 .header {
   display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  background-color: white;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #fff;
+  padding: 1.213rem 1.3rem 1.3rem 1.3rem;
+  position: relative;
 }
 
 h1 {
-  margin: 0;
-  color: #1965ee;
-  font-size: 24px;
+  color: #0290ff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0.375rem 2.938rem 0.123rem 0;
+  font-family: 'Montserrat', sans-serif;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
 }
 
 li {
   list-style-type: none;
 }
 
-.header li {
-  margin-right: 10px;
-}
-
-ul {
-  margin: 0;
+.liste {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 a {
   text-decoration: none;
   color: black;
+  font-size: 16px;
+}
+
+.liste li a {
   font-size: 20px;
-  margin-right: 10px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.user-icon {
+  width: 1.063rem;
+  height: 1.063rem;
+  color: #0290ff;
+  margin: auto;
+}
+
+.user-container {
+  position: absolute;
+  right: 10px;
+  padding: 20px;
+  border-radius: 50%;
+  border: solid 1px #4386bf;
 }
 
 .row {
   display: grid;
-  margin: 20px;
-  border: 2px solid #d1e0fb;
+  margin: 30px;
+  border-radius: 5px;
+  border: solid 1px #e8e8e8;
 }
 
 .grid-item {
@@ -55,19 +92,22 @@ p {
 }
 
 .title {
-  color: black;
-  font-size: 30px;
+  font-family: 'Roboto Slab', serif;
+  font-size: 1.375rem;
+  letter-spacing: -0.2px;
+  color: #424141;
   font-weight: bold;
+  width: 22.313rem;
 }
 
 .author {
-  font-weight: bolder;
-  color: #1965ee;
-  font-size: 20px;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 300;
+  font-size: 0.875rem;
+  color: #4386bf;
 }
 
-.category,
-.current {
+.category {
   font-size: 16px;
   color: #999;
   font-weight: bold;
@@ -75,104 +115,96 @@ p {
 
 .item1 {
   display: flex;
-  flex-direction: row-reverse;
   align-items: center;
-}
-
-.pourcent {
-  font-size: 30px;
-  margin: 0;
-  font-weight: bold;
-}
-
-.complete {
-  margin: 0;
-  font-size: 24px;
 }
 
 .list {
   display: flex;
-  padding: 0;
-  margin-top: 30px;
+  text-align: start;
 }
 
-.liste {
-  display: flex;
-  padding: 0;
-}
-
-.circle-wrap {
-  background: #0c3a2a;
+.oval-2 {
+  -webkit-background-clip:
+    content-box,
+    border-box,
+    border-box,
+    border-box,
+    border-box;
+  background-clip:
+    content-box,
+    border-box,
+    border-box,
+    border-box,
+    border-box;
+  background-image:
+    linear-gradient(#fff, #fff),
+    linear-gradient(30deg, #d3d3d3 36%, #d3d3d3 0),
+    linear-gradient(120deg, #0290ff 56%, #0290ff 0),
+    linear-gradient(300deg, #0290ff 36%, #d3d3d3 0),
+    linear-gradient(210deg, #0290ff 36%, #0290ff 0);
+  background-origin:
+    content-box,
+    border-box,
+    border-box,
+    border-box,
+    border-box;
+  background-position: 50%, 0 0, 100% 0, 0 100%, 100% 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%, 50% 50%, 50% 50%, 50% 50%, 50% 50%;
+  border: 6px solid transparent;
   border-radius: 50%;
-  border: 1px solid #cdcbd0;
-  margin-right: 200px;
-  margin-bottom: 140px;
+  height: 4.25rem;
+  width: 4.25rem;
 }
 
-.mask.full,
-.circle .fill {
-  animation: fill ease-in-out 3s;
-  transform: rotate(135deg);
+.completed-txt-parcent {
+  padding-left: 1rem;
 }
 
-.mask .fill {
-  clip: rect(0, 75px, 150px, 0);
-  background-color: #1965ee;
+.completed-parcent {
+  font-size: 2rem;
+  color: #1d1919;
+  line-height: 1.4rem;
 }
 
-.circle-wrap .circle .mask,
-.circle-wrap .circle .fill {
-  width: 150px;
-  height: 150px;
-  position: absolute;
-  border-radius: 50%;
-}
-
-.circle-wrap .circle .mask {
-  clip: rect(0, 150px, 150px, 75px);
-}
-
-.circle-wrap .inside-circle {
-  width: 122px;
-  height: 122px;
-  border-radius: 50%;
-  background: #e7efec;
-  line-height: 120px;
-  text-align: center;
-  margin-top: 14px;
-  margin-left: 14px;
-  color: #1e51dc;
-  position: absolute;
-  z-index: 100;
-  font-weight: 700;
-  font-size: 2em;
-}
-
-@keyframes fill {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(135deg);
-  }
+.completed-text {
+  color: #1d1919;
+  opacity: 0.5;
 }
 
 li button {
   background-color: white;
-  color: #1965ee;
+  color: #4386bf;
+  font-size: 20px;
   padding: 5px;
   border: none;
   margin-right: 5px;
 }
 
+.chap {
+  font-weight: 300;
+  letter-spacing: -0.4px;
+  color: #1d1919;
+  margin: 0.5rem 0 1.2rem 0;
+}
+
+.current {
+  opacity: 0.5;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #1d1919;
+  margin: 0;
+}
+
 button[type='submit'] {
-  background-color: #2f74ef;
-  color: white;
-  padding: 10px 20px;
-  margin-top: 30px;
+  min-width: 20%;
+  padding: 0.438rem 1.188rem 0.5rem 1.375rem;
+  border-radius: 3px;
+  background-color: #0290ff;
   border: none;
-  border-radius: 5px;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #fff;
 }
 
 .form {
@@ -182,23 +214,34 @@ button[type='submit'] {
 }
 
 h2 {
-  color: #999;
-  margin-left: 20px;
+  margin-left: 30px;
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #888;
 }
 
 input {
-  margin-bottom: 5px;
-  padding: 10px;
-  border: 2px solid #d1e0fb;
-  border-radius: 5px;
+  width: 32%;
+  padding: 0.81rem 1rem;
+  font-size: 1rem;
+  height: 2.813rem;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
 }
 
 input[type="submit"] {
-  background-color: #2f74ef;
-  color: white;
-  padding: 5px;
+  padding: 0.81rem 1.5rem;
+  cursor: pointer;
+  background-color: #0290ff;
+  color: #fff;
+  font-size: 1rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 3px;
+}
+
+.form input::placeholder {
+  font-size: 1rem;
+  font-style: italic;
 }
 
 @media screen and (min-width: 600px) {
@@ -208,8 +251,8 @@ input[type="submit"] {
   }
 
   a {
-    font-size: 30px;
-    margin-right: 150px;
+    font-size: 20px;
+    margin-right: 25px;
   }
 
   .row {
@@ -223,11 +266,10 @@ input[type="submit"] {
 
   input {
     margin-bottom: 0;
-    width: 100%;
     margin-right: 20px;
   }
 
   input[type="submit"] {
-    width: 30%;
+    width: 10%;
   }
 }
