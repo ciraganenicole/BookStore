@@ -41,36 +41,39 @@ const books = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className='form'>
-      <input
-        type='text'
-        placeholder='Book title'
-        required
-        name='title'
-        value={title}
-        onChange={handleChange}
-      />
-      <input
-        type='text'
-        name='author'
-        value={author}
-        placeholder='Book author'
-        onChange={handleChange}
-        required
-      />
-      <input
-        name='category'
-        id='category'
-        placeholder='Category'
-        value={category}
-        onChange={handleChange}
-        required
-      />
-      <input
-        type='submit'
-        value='Add book'
-      />
-    </form>
+    <>
+      <h2>Add new book</h2>
+      <form onSubmit={handleSubmit} className='form'>
+        <input
+          type='text'
+          placeholder='Book title'
+          required
+          name='title'
+          value={title}
+          onChange={handleChange}
+        />
+        <input
+          type='text'
+          name='author'
+          value={author}
+          placeholder='Book author'
+          onChange={handleChange}
+          required
+        />
+        <input
+          name='category'
+          id='category'
+          placeholder='Category'
+          value={category}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type='submit'
+          value='Add book'
+        />
+      </form>
+    </>
   );
 };
 

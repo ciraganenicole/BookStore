@@ -18,7 +18,7 @@ const Header = () => {
   return (
     <header className='header'>
       <h1>BookStore CMS</h1>
-      <ul className='list'>
+      <ul className='liste'>
         {data.map(({ id, name, url }) => (
           <NavLink key={id} to={url}>
             <li>{name}</li>

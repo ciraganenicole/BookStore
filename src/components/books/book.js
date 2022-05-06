@@ -23,15 +23,9 @@ const book = () => {
         >
           <section className="grid-item">
             <div>
-              <p>
-                <span className="title">{book.title}</span>
-                <span className="by">By</span>
-                <span className="author">{book.author}</span>
-              </p>
-              <p className="categ">
-                Category:
-                <span className="category">{book.category}</span>
-              </p>
+              <p><span className="category">{book.category}</span></p>
+              <p><span className="title">{book.title}</span></p>
+              <p><span className="author">{book.author}</span></p>
             </div>
             <ul className="list">
               <li>
@@ -53,7 +47,8 @@ const book = () => {
           </section>
           <section className="grid-item item1">
             <div>
-              <p>Completed</p>
+              <p className="pourcent">65%</p>
+              <p className="complete">Completed</p>
             </div>
             <div className="circle-wrap">
               <div className="circle">
@@ -73,7 +68,7 @@ const book = () => {
               <p className="chap">Chapter 17</p>
             </div>
             <button type='submit'>
-              Update progress
+              UPDATE PROGRESS
             </button>
           </section>
         </div>
