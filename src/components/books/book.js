@@ -19,17 +19,17 @@ const book = () => {
       {post.map((book) => (
         <div
           key={book.item_id}
-          className='book-card'
+          className="row"
         >
-          <section>
+          <section className="grid-item">
             <div>
-              <p>{book.title}</p>
-              <p>{book.author}</p>
-              <p>{book.category}</p>
+              <p><span className="category">{book.category}</span></p>
+              <p><span className="title">{book.title}</span></p>
+              <p><span className="author">{book.author}</span></p>
             </div>
-            <ul>
+            <ul className="list">
               <li>
-                Comment
+                <button type="button">Comment</button>
               </li>
               <li>
                 <button
@@ -40,26 +40,28 @@ const book = () => {
                   Remove
                 </button>
               </li>
-              <li>Edit</li>
+              <li>
+                <button type="button">Edit</button>
+              </li>
             </ul>
           </section>
-          <section>
-            <div className='circle' />
-            <div>
-              <p>
+          <section className="grid-item item1">
+            <div className="oval-2" />
+            <div className="completed-txt-parcent">
+              <span className="completed-parcent">
                 {book.completed}
-                $
-              </p>
-              <p>Completed</p>
+                75%
+              </span>
+              <div className="completed-text">completed</div>
             </div>
           </section>
-          <section>
+          <section className="grid-item">
             <div>
-              <p>CURRENT CHAPTER</p>
-              <p>Chapter 17</p>
+              <p className="current">CURRENT CHAPTER</p>
+              <p className="chap">Chapter 17</p>
             </div>
             <button type='submit'>
-              Update progress
+              UPDATE PROGRESS
             </button>
           </section>
         </div>
